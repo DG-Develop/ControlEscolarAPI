@@ -36,6 +36,9 @@ namespace Persistence.Configuration
                 .HasDefaultValue(0)
                 .HasColumnName("sueldo_maximo");
 
+            builder.Property(tipoPersonal => tipoPersonal.TieneSueldo)
+                .IsRequired()
+                .HasColumnName("tiene_sueldo");
 
             builder.Property(tipoPersonal => tipoPersonal.IdentificadorDeControl)
                 .HasColumnType("char")

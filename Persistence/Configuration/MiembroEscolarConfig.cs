@@ -11,8 +11,7 @@ namespace Persistence.Configuration
             // Configuración de Miembro Escolar
             builder.ToTable("MiembroEscolar");
 
-            builder.HasKey(miembroEscolar => miembroEscolar.IdMiembroEscolar)
-                .HasName("PK_miembro_escolar");
+            builder.HasKey(miembroEscolar => miembroEscolar.IdMiembroEscolar);
 
             builder.Property(miembroEscolar => miembroEscolar.IdMiembroEscolar)
                 .HasColumnName("id_miembro_escolar");
@@ -49,6 +48,9 @@ namespace Persistence.Configuration
             builder.Property(miembroEscolar => miembroEscolar.Estatus)
                 .IsRequired()
                 .HasColumnName("estatus");
+
+            builder.Property(miembroEscolar => miembroEscolar.IdTipoPersonal)
+                .HasColumnName("id_tipo_personal");
 
             builder.HasOne(miembroEscolar => miembroEscolar.TipoPersonal)
                 .WithMany(tipoPersonal => tipoPersonal.MiembrosEscolares)
