@@ -38,5 +38,14 @@ namespace Persistence.Repositorios
 
             return respuesta;
         }
+
+        public async Task<bool> ExisteCorreroRegistrado(string CorreoElectronico)
+        {
+            var respuesta = await _controlEscolarDBContext.Personales
+                .Where(p => p.CorreoElectronico == CorreoElectronico)
+                .AnyAsync();
+
+            return respuesta;
+        }
     }
 }

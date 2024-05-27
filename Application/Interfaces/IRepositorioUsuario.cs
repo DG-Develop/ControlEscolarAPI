@@ -4,6 +4,6 @@ namespace Application.Interfaces
 {
     public interface IRepositorioUsuario
     {
-        Task<Usuario?> ObtenerUsuarioPorCorreo(string Correo);
+        Task<Usuario?> ObtenerUsuarioPorCorreoYPassword(string Correo, string Password);
     }
 }

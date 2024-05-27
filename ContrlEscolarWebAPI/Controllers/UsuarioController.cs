@@ -15,6 +15,12 @@ namespace ContrlEscolarWebAPI.Controllers
             _mediator = mediator;
         }
 
+        /// <summary>
+        /// Maneja la autenticación de un usuario devuelve un modelo de usuario con el 
+        /// accessToken generado con JWT si las credenciales son válidas.
+        /// </summary>
+        /// <param name="command">Credenciales de autenticación del usuario.</param>
+        /// <returns>Devuelve un modelo de usuario.</returns>
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] AuthenticationUsuarioCommand command)
         {
