@@ -20,7 +20,7 @@ namespace ContrlEscolarWebAPI.Controllers
 
         [HttpGet("paginar-personal")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Roles = "Administrador")]
-        public async Task<IActionResult> PaginarPersonal([FromQuery] int TotalPagina = 25, [FromQuery] int NumeroPagina = 1, [FromQuery] string? NumeroControl = null)
+        public async Task<IActionResult> PaginarPersonal([FromQuery] int TotalPagina = 10, [FromQuery] int NumeroPagina = 1, [FromQuery] string? NumeroControl = null)
         {
             var respuesta = await _mediator.Send(new PaginarVwPersonalQuery { NumeroControl = NumeroControl, NumeroPagina = NumeroPagina, TotalPagina = TotalPagina });
 
